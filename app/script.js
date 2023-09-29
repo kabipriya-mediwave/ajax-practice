@@ -1,15 +1,19 @@
 $(document).ready(function () {
-  const loadingIndicator = $("#loadingIndicator");
+  total();
+});
+
+function total() {
+  const loading = $("#loading");
 
   function showLoading() {
-    loadingIndicator.show();
+    loading.show();
   }
 
   function hideLoading() {
-    loadingIndicator.hide();
+    loading.hide();
   }
 
-  function populateDropdown(dogBreeds) {
+  function Dropdown(dogBreeds) {
     const dropdown = $("#Dropdown");
 
     dropdown.append('<option value="">Select a breed</option>');
@@ -23,7 +27,7 @@ $(document).ready(function () {
   $("#button").click(function () {
     const selectedBreed = $("#Dropdown").val();
     if (selectedBreed) {
-      getRandomImageOfDog(selectedBreed);
+      getRandomImage(selectedBreed);
     }
   });
 
@@ -35,7 +39,7 @@ $(document).ready(function () {
         console.log("API request success");
         const dogsList = Object.keys(resp.message);
         console.log(dogsList);
-        populateDropdown(dogsList);
+        Dropdown(dogsList);
       },
       error: function () {
         console.log("API request error");
@@ -46,7 +50,7 @@ $(document).ready(function () {
     });
   }
 
-  function getRandomImageOfDog(dogBreed) {
+  function getRandomImage(dogBreed) {
     const url = `https://dog.ceo/api/breed/${dogBreed}/images/random`;
     showLoading();
     $.ajax(url, {
@@ -75,4 +79,4 @@ $(document).ready(function () {
   }
 
   getAllDogsFromApi();
-});
+}
