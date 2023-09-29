@@ -1,0 +1,49 @@
+#loadingIndicator {
+  display: none;
+}
+body,
+h1,
+select,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+#loadingIndicator {
+  display: none;
+  font-weight: bold;
+}
+
+#Dropdown {
+  margin: 20px;
+  padding: 5px;
+}
+
+#button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#imageContainer {
+  margin-top: 20px;
+}
+
+#Dropdown,
+#button {
+  margin-right: 10px;
+}
